@@ -21,7 +21,7 @@ def download_selenium():
     data={"Page Title":title}
     return(data)
 
-@app.route("/",methods=['GET','POST'])
+@app.route("/")
 def home():
     return(download_selenium())
 
