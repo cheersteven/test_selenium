@@ -12,8 +12,9 @@ def download_selenium():
     chrome_options.add_argument("--headless")
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--disable-dev-shm-usage")
-    chrome_driver_path = './chromedriver'
-    driver = webdriver.Chrome(executable_path=chrome_driver_path,options=chrome_options)
+    #chrome_driver_path = './chromedriver'
+    #driver = webdriver.Chrome(executable_path=chrome_driver_path,options=chrome_options)
+    self.driver = webdriver.Remote(command_executor='http://selenium:4444/wd/hub',desired_capabilities=DesiredCapabilities.CHROME.copy(),options=options)
 
     #driver=webdriver.Chrome(service=Service(ChromeDriverManager().install()),options=chrome_options)
     driver.get("https://google.com")
